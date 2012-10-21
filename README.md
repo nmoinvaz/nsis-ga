@@ -4,11 +4,15 @@ This script will allow you to add google analytics event tracking into your NSIS
 
 Specify the include at the top of your nsh script:
 
+```
 !include "ga.nsh"
+```
 
 To track an event use the following
 
+```
 !insertmacro GoogleAnalytics "UA-12312312-3" "Category" "Action" "Label" "Value"
+```
 
 Example events to track:
 
