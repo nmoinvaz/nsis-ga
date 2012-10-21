@@ -12,6 +12,7 @@ To track an event use the following
 
 Example events to track:
 
+```
 Function .onInit
     !insertmacro GoogleAnalytics "UA-12312312-3" "Install" "Started" "" ""
 FunctionEnd
@@ -37,3 +38,4 @@ FunctionEnd
 Function un.onGUIEnd
     !insertmacro GoogleAnalytics "UA-12312312-3" "Uninstall" "Ended" "" ""
 FunctionEnd
+```
