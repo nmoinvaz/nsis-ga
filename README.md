@@ -12,7 +12,6 @@ To track an event use the following
 
 Example events to track:
 
-;Install events
 Function .onInit
     !insertmacro GoogleAnalytics "UA-12312312-3" "Install" "Started" "" ""
 FunctionEnd
@@ -26,7 +25,6 @@ Function .onGUIEnd
     !insertmacro GoogleAnalytics "UA-12312312-3" "Install" "Ended" "" ""
 FunctionEnd
 
-;Uninstall events
 Function un.onInit
     !insertmacro GoogleAnalytics "UA-12312312-3" "Uninstall" "Started" "" ""
 FunctionEnd
