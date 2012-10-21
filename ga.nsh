@@ -1,4 +1,3 @@
-!include "StrFunc.nsh"
 Var GaVisitorId
 Var GaRequests
 !macro GoogleAnalytics Account Category Action Label Value
