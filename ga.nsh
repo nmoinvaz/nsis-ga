@@ -56,7 +56,15 @@ Var GaRequests
     System::Call 'user32::GetWindowDC(i $HWNDPARENT) i .r5'
     System::Call 'gdi32::GetDeviceCaps(i $5, i 12) i .r6'
     StrCpy $4 "http://www.google-analytics.com/__utm.gif?utmwv=5.3.6&utmhn=&utmr=-&utmp=&utmac=${Account}&utmcc=__utma%3D999.999.999.999.999.1%3B"
-    StrCpy $4 "$4&utmt=event&utme=5(${Category}*${Action}*${Label})(${Value})&utmvid=0x$GaVisitorId&utmsr=$1&utmsc=$6-bit&utms=$GaRequests&guid=on"
+    StrCpy $4 "$4&utmt=event&utme=5(${Category}*${Action}"
+    ${If} "${Label}" != ""
+        StrCpy $4 "$4*${Label}"
+    ${EndIf}
+    StrCpy $4 "$4)"
+    ${If} "${Value}" != ""
+        StrCpy $4 "$4(${Value})"
+    ${EndIf}
+    StrCpy $4 "$4&utmvid=0x$GaVisitorId&guid=on&utmsr=$1&utmsc=$6-bit&utms=$GaRequests"
     GetTempFileName $3
     inetc::get /SILENT /CONNECTTIMEOUT 5 /HEADER "Accept-Language: $2" /USERAGENT $0 /RECEIVETIMEOUT 5 $4 $3
     Delete $3
