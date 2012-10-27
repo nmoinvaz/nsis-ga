@@ -68,7 +68,8 @@ Var GaRequests
     ${EndIf}
     !insertmacro GoogleGetLocale
     StrCpy $4 $0
-    StrCpy $3 "http://www.google-analytics.com/__utm.gif?utmwv=5.3.6&utmhn=&utmr=-&utmp=&utmac=${Account}&utmcc=__utma%3D999.999.999.999.999.1%3B"
+    StrCpy $3 "http://www.google-analytics.com/__utm.gif"
+    StrCpy $3 "$3?utmwv=5.3.6&utmhn=&utmr=-&utmp=&utmac=${Account}&utmcc=__utma%3D999.999.999.999.999.1%3B"
     StrCpy $3 "$3&utms=$GaRequests&utmvid=0x$GaVisitorId&guid=on&utmt=event&utme=5(${Category}*${Action}"
     ${If} "${Label}" != ""
         StrCpy $3 "$3*${Label}"
