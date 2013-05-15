@@ -43,4 +43,4 @@ Function un.onGUIEnd
     !insertmacro GoogleAnalytics "YOUR_ACCOUNT_ID" "Uninstall" "Ended" "" ""
 FunctionEnd
 ```
-This script requires the use of the [inetc](http://nsis.sourceforge.net/Inetc_plug-in) plugin
+This script requires the use of [logiclib](http://nsis.sourceforge.net/LogicLib) script and [inetc](http://nsis.sourceforge.net/Inetc_plug-in) plugin. Tested only with the non-Unicode version of NSIS.
